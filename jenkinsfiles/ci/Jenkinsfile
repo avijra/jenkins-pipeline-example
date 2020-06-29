@@ -23,7 +23,7 @@ node{
   stage ('Build and Deploy DSV image') {
     sh "docker build -t avijra/jenkins-pipeline-example:dsv ."
   
-    docker.withRegistry("avijra", "1Aplsheela") {
+    docker.withRegistry("", "registryCredential") {
       sh "docker push avijra/jenkins-pipeline-example:dsv"
     }   
   }
